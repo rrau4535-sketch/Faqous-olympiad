@@ -9,7 +9,7 @@ import type { Answer } from '../types'
 interface AnswerDetail extends Omit<Answer, 'question' | 'choice'> {
   question: { id: string; text: string; published_at: string }
   choice: { id: string; text: string; is_correct: boolean }
-  correct_choice?: { text: string }
+  correct_choice?: { text: string } | null
 }
 
 interface RankInfo {
