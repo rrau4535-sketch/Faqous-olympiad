@@ -6,7 +6,7 @@ import { useAuth } from '../contexts/AuthContext'
 import Navbar from '../components/shared/Navbar'
 import type { Answer } from '../types'
 
-interface AnswerDetail extends Answer {
+interface AnswerDetail extends Omit<Answer, 'question' | 'choice'> {
   question: { id: string; text: string; published_at: string }
   choice: { id: string; text: string; is_correct: boolean }
   correct_choice?: { text: string }

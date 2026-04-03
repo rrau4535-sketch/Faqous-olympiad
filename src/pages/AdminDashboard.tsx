@@ -23,7 +23,7 @@ interface QuestionForm {
   choices: { text: string; is_correct: boolean }[]
 }
 
-interface AnswerWithUser extends Answer {
+interface AnswerWithUser extends Omit<Answer, 'profile' | 'choice'> {
   profile: { username: string; full_name?: string; school?: { name: string }; classroom?: { name: string } }
   choice: { text: string; is_correct: boolean }
 }
